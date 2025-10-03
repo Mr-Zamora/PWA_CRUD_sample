@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filipino Recipes - Home</title>    
+
+    <!-- Google Fonts: Asar for a distinctive look - Used for logo and headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Asar&display=swap" rel="stylesheet">
+
+    <!-- Link to external CSS - Contains all styling for the website -->
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+    <!-- Main container - Provides overall structure for the page -->
+    <div class="grid-container">
+
+    <!-- Header Section - Contains logo and navigation -->
+    <header class="header" role="banner">
+        <!-- Logo with home link - Uses food emoji and text -->
+        <div class="logo">
+            <a href="index.html" class="logo-link" aria-label="Home page">&#127836; Filipino Recipes</a>
+        </div>
+    
+        <!-- Hamburger menu icon - Only visible on mobile devices -->
+        <div class="nav-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0" aria-expanded="false">&#9776;</div>
+        
+        <!-- Navigation links - Primary site navigation -->
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="add-recipe.html" class="btn-link">Add a recipe</a>
+            <a href="about-this.html" class="btn-link">About</a>
+            <a href="contact.html" class="btn-link">Contact</a>
+        </nav>
+    </header>
+    
+
+
+
+    
+        <!-- Main Content - Recipe card grid using CSS Grid layout -->
+        <main class="content grid-4-col" role="main">
+
+            <!-- Recipe Card Component - Will be dynamically generated in Flask version -->
+            <!-- Each card represents a single recipe with category, title and description -->
+            <article class="card" data-category="Main Course" data-recipe-id="1">
+                <header class="card-header">
+                    <p class="category">Main Course</p>
+                    <h3><a href="#" class="recipe-link">Adobo</a></h3>
+                </header>
+                <div class="card-body">
+                    <p class="recipe-short-des">A savoury dish of marinated pork or chicken simmered in soy sauce, vinegar, and garlic.</p>
+                </div>
+            </article>
+            
+            <article class="card" data-category="Main Course" data-recipe-id="2">
+                <header class="card-header">
+                    <p class="category">Main Course</p>
+                    <h3><a href="#" class="recipe-link">Kare-Kare</a></h3>
+                </header>
+                <div class="card-body">
+                    <p class="recipe-short-des">A rich peanut-based stew with oxtail, beef, or pork, served with a side of shrimp paste (bagoong).</p>
+                </div>
+            </article>
+            
+            <!-- This is the only card with a working link to the recipe detail page -->
+            <article class="card" data-category="Main Course" data-recipe-id="3">
+                <header class="card-header">
+                    <p class="category">Main Course</p>
+                    <h3><a href="recipe-detail.html" class="recipe-link">Lumpia</a></h3>
+                </header>
+                <div class="card-body">
+                    <p class="recipe-short-des">A crispy, golden fried spring roll filled with seasoned ground pork and vegetables, often served with sweet and sour dipping sauce.</p>
+                </div>
+            </article>
+            
+            <article class="card" data-category="Main Course" data-recipe-id="4">
+                <header class="card-header">
+                    <p class="category">Main Course</p>
+                    <h3><a href="#" class="recipe-link">Bicol Express</a></h3>
+                </header>
+                <div class="card-body">
+                    <p class="recipe-short-des">A spicy dish made with pork, chillies, and shrimp paste cooked in rich coconut milk.</p>
+                </div>
+            </article>
+
+            <article class="card" data-category="Soup" data-recipe-id="5">
+                <header class="card-header">
+                    <p class="category">Soup</p>
+                    <h3><a href="#" class="recipe-link">Bulalo</a></h3>
+                </header>
+                <div class="card-body">
+                    <p class="recipe-short-des">A comforting beef shank soup with bone marrow, corn, cabbage, and potatoes.</p>
+                </div>
+            </article>
+
+            <article class="card" data-category="Noodles" data-recipe-id="6">
+                <header class="card-header">
+                    <p class="category">Noodles</p>
+                    <h3><a href="#" class="recipe-link">Pancit Canton</a></h3>
+                </header>
+                <div class="card-body">
+                    <p class="recipe-short-des">Stir-fried egg noodles with vegetables, shrimp, pork, and a savoury soy sauce-based seasoning.</p>
+                </div>
+            </article>
+
+            <article class="card" data-category="Special Occasion" data-recipe-id="7">
+                <header class="card-header">
+                    <p class="category">Special Occasion</p>
+                    <h3><a href="#" class="recipe-link">Lechon</a></h3>
+                </header>
+                <div class="card-body">
+                    <p class="recipe-short-des">A whole roasted pig with crispy skin, often served at fiestas and large gatherings.</p>
+                </div>
+            </article>
+            
+            <article class="card" data-category="Special Occasion" data-recipe-id="8">
+                <header class="card-header">
+                    <p class="category">Special Occasion</p>
+                    <h3><a href="#" class="recipe-link">Kaldereta</a></h3>
+                </header>
+                <div class="card-body">
+                    <p class="recipe-short-des">A hearty beef stew made with tomatoes, liver spread, bell peppers, and potatoes.</p>
+                </div>
+            </article>
+
+            <article class="card" data-category="Street Food" data-recipe-id="9">
+                <header class="card-header">
+                    <p class="category">Street Food</p>
+                    <h3><a href="#" class="recipe-link">Balut</a></h3>
+                </header>
+                <div class="card-body">
+                    <p class="recipe-short-des">A fertilised duck egg with a developing embryo, commonly sold as street food and considered a delicacy.</p>
+                </div>
+            </article>
+
+            <article class="card" data-category="Dessert" data-recipe-id="10">
+                <header class="card-header">
+                    <p class="category">Dessert</p>
+                    <h3><a href="#" class="recipe-link">Halo-Halo</a></h3>
+                </header>
+                <div class="card-body">
+                    <p class="recipe-short-des">A refreshing dessert made with shaved ice, sweetened fruits, jellies, beans, and topped with ube and leche flan.</p>
+                </div>
+            </article>
+            
+            <article class="card" data-category="Dessert" data-recipe-id="11">
+                <header class="card-header">
+                    <p class="category">Dessert</p>
+                    <h3><a href="#" class="recipe-link">Bibingka</a></h3>
+                </header>
+                <div class="card-body">
+                    <p class="recipe-short-des">A type of rice cake traditionally cooked in clay pots, topped with salted egg and cheese, often served during Christmas.</p>
+                </div>
+            </article>
+            
+            <article class="card" data-category="Dessert" data-recipe-id="12">
+                <header class="card-header">
+                    <p class="category">Dessert</p>
+                    <h3><a href="#" class="recipe-link">Leche Flan</a></h3>
+                </header>
+                <div class="card-body">
+                    <p class="recipe-short-des">A creamy custard dessert made with egg yolks and milk, topped with caramelised sugar.</p>
+                </div>
+            </article>
+            
+
+            
+            
+            
+
+
+        </main>
+        
+        <!-- Footer - Contains copyright information -->
+        <footer class="footer" role="contentinfo">
+            &copy; 2024 Filipino Recipes
+        </footer>
+    </div>
+
+
+    <!-- JavaScript for mobile navigation menu toggle -->
+    <script>
+        // Select the hamburger icon and the navigation links container
+        const toggleButton = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+    
+        // Add a click event to toggle the 'show' class
+        toggleButton.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+            
+            // Update aria-expanded attribute for accessibility
+            const isExpanded = navLinks.classList.contains('show');
+            toggleButton.setAttribute('aria-expanded', isExpanded);
+        });
+        
+        // Allow keyboard navigation with Enter key
+        toggleButton.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                toggleButton.click();
+            }
+        });
+    </script>
+
+
+</body>
+</html>
