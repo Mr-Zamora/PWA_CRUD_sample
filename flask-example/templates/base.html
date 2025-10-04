@@ -26,10 +26,11 @@
         <div class="nav-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0" aria-expanded="false">&#9776;</div>
         
         <!-- Navigation links - Primary site navigation -->
+        {% set current_page = active_page | default('') %}
         <nav class="nav-links" aria-label="Main navigation">
-            <a href="{{ url_for('add_recipe') }}" class="btn-link">Add a recipe</a>
-            <a href="{{ url_for('about') }}" class="btn-link">About</a>
-            <a href="{{ url_for('contact') }}" class="btn-link">Contact</a>
+            <a href="{{ url_for('add_recipe') }}" class="btn-link{% if current_page == 'add_recipe' %} active{% endif %}" {% if current_page == 'add_recipe' %}aria-current="page"{% endif %}>Add a recipe</a>
+            <a href="{{ url_for('about') }}" class="btn-link{% if current_page == 'about' %} active{% endif %}" {% if current_page == 'about' %}aria-current="page"{% endif %}>About</a>
+            <a href="{{ url_for('contact') }}" class="btn-link{% if current_page == 'contact' %} active{% endif %}" {% if current_page == 'contact' %}aria-current="page"{% endif %}>Contact</a>
         </nav>
     </header>
 
@@ -42,27 +43,7 @@
     </footer>
     
     <!-- JavaScript for mobile navigation menu toggle -->
-    <script>
-        // Select the hamburger icon and the navigation links container
-        const toggleButton = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-    
-        // Add a click event to toggle the 'show' class
-        toggleButton.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-            
-            // Update aria-expanded attribute for accessibility
-            const isExpanded = navLinks.classList.contains('show');
-            toggleButton.setAttribute('aria-expanded', isExpanded);
-        });
-        
-        // Allow keyboard navigation with Enter key
-        toggleButton.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter') {
-                toggleButton.click();
-            }
-        });
-    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
     
     <!-- Additional JavaScript can be included in child templates -->
     {% block scripts %}{% endblock %}

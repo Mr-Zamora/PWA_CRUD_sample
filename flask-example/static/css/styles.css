@@ -39,11 +39,23 @@ body {
     background-color: var(--dark-red);  /* Changes background color on hover */
 }
 
+.btn-link.active {
+    background-color: var(--dark-red);
+}
+
 /* ------- LAYOUT STYLES ------- */
-/* Grid layout - arranges recipe cards in rows and columns */
+/* Page grid container - keeps header, content, and footer stacked vertically */
+.grid-container {
+    min-height: 100vh;                  /* Ensures page fills the viewport height */
+    display: grid;                      /* Use grid to control vertical layout */
+    grid-template-rows: auto 1fr auto;  /* Header, flexible content, footer */
+}
+
+/* Grid layout - arranges recipe cards responsively */
 .grid-4-col {
     display: grid;                      /* Creates a grid layout */
-    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Automatically fits as many 250px columns as possible */
     gap: 20px;                          /* Space between grid items */
     padding: 0 20px;                    /* Space on left and right sides */
 }
@@ -155,6 +167,14 @@ body {
     width: calc(70% - 40px);            /* Takes up 70% of container width minus gap */
 }
 
+.info-section + .info-section {
+    margin-top: 30px;
+}
+
+.info-section h2 {
+    margin-bottom: 10px;
+}
+
 /* ------- RESPONSIVE DESIGN ------- */
 /* These styles change the layout when viewing on smaller screens like phones and tablets */
 /* Applied when screen width is less than 768 pixels */
@@ -219,6 +239,18 @@ body {
     color: rgb(255, 102, 102);          /* Lighter red color when hovering */
 }
 
+.inline-form {
+    display: inline;
+}
+
+.inline-form .action-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
 /* ------- FORM STYLES ------- */
 /* Container for the add recipe form */
 .form-container {
@@ -261,6 +293,35 @@ body {
     display: flex;                      /* Arranges buttons side by side */
     gap: 10px;                          /* Space between buttons */
     justify-content: flex-start;        /* Left-aligns the buttons */
+}
+
+.form-error {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid var(--dark-red);
+    border-radius: 5px;
+    background-color: rgba(174, 60, 60, 0.1);
+    color: var(--dark-red);
+    font-weight: bold;
+}
+
+.form-hint {
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 5px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* Button styling */
