@@ -163,6 +163,14 @@ body {
     width: calc(70% - 40px);            /* Takes up 70% of container width minus gap */
 }
 
+/* Recipe metadata section - stacks detail chips vertically */
+.recipe-info {
+    display: flex;                      /* Use flex to control layout */
+    flex-direction: column;             /* Place items on separate lines */
+    gap: 4px;                           /* Space between metadata rows */
+    align-items: flex-start;            /* Align text to the left */
+}
+
 /* ------- RESPONSIVE DESIGN ------- */
 /* These styles change the layout when viewing on smaller screens like phones and tablets */
 /* Applied when screen width is less than 768 pixels */
