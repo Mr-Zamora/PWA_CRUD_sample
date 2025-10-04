@@ -6,27 +6,35 @@ This guide explains how to organize CSS files when transitioning from a static H
 
 ### Current Structure
 ```
-app/
+static-site/
 ├── styles.css
+├── script.js
 ├── index.html
 ├── recipe-detail.html
-└── ...
+├── add-recipe.html
+├── about-this.html
+├── contact.html
+├── images/
+└── audio/
 ```
 
 ### Recommended Flask Structure
 ```
-app/
+flask-app/
 ├── static/
 │   ├── css/
 │   │   └── styles.css
 │   ├── js/
 │   │   └── script.js
-│   └── images/
-│       └── ...
+│   ├── images/
+│   └── audio/
 ├── templates/
 │   ├── base.html
 │   ├── index.html
-│   └── recipe_detail.html
+│   ├── recipe_detail.html
+│   ├── add_recipe.html
+│   ├── about.html
+│   └── contact.html
 └── app.py
 ```
 
@@ -39,18 +47,21 @@ When converting this project to Flask, follow these steps:
    mkdir -p static/css static/js static/images
    ```
 
-2. **Move your CSS file**:
+2. **Move your CSS and JavaScript files**:
    ```
    mv styles.css static/css/
+   mv script.js static/js/
    ```
 
 3. **Update references in HTML templates**:
    ```html
    <!-- Before -->
    <link rel="stylesheet" href="styles.css">
+   <script src="script.js"></script>
    
    <!-- After (in Flask templates) -->
    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+   <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
    ```
 
 ## Why This Structure Works
@@ -79,6 +90,11 @@ When converting this project to Flask, follow these steps:
 4. **Mobile-First Approach**:
    - Start with styles for mobile devices
    - Add media queries to enhance the design for larger screens
+   - Use responsive grid techniques like `repeat(auto-fill, minmax(250px, 1fr))` for layouts
+
+5. **Centralize Shared Behaviour**:
+   - Store JavaScript such as the navigation toggle in `script.js`
+   - Load it once per page via the base template to avoid duplication
 
 ## Example: Linking CSS in Flask Templates
 
@@ -114,7 +130,7 @@ In your Flask application, you'll use Jinja2 templates to include CSS files:
     </footer>
     
     <!-- JavaScript can be included here -->
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
 </body>
 </html>
 ```
@@ -129,7 +145,7 @@ In your Flask application, you'll use Jinja2 templates to include CSS files:
 <main class="content grid-4-col">
     <!-- Recipe cards would be generated in a loop -->
     {% for recipe in recipes %}
-    <article class="card" data-category="{{ recipe.category }}">
+    <article class="card" data-category="{{ recipe.category }}" data-recipe-id="{{ recipe.id }}">
         <header class="card-header">
             <p class="category">{{ recipe.category }}</p>
             <h3><a href="{{ url_for('recipe_detail', recipe_id=recipe.id) }}" class="recipe-link">{{ recipe.name }}</a></h3>
@@ -148,6 +164,6 @@ In your Flask application, you'll use Jinja2 templates to include CSS files:
 1. Study the improved CSS structure with its clear comments
 2. Practice organizing CSS by related components
 3. Learn how Flask's `url_for()` function works with static files
-4. Experiment with template inheritance in Flask
+4. Experiment with template inheritance in Flask and ensure shared assets (CSS/JS) are loaded from the base template
 
 Remember that good CSS organization makes your code more maintainable and easier to understand, which is especially important when working with Flask templates.

@@ -16,24 +16,24 @@
 <body>
 
     <!-- Header with logo linking to index.html -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="logo">
             <a href="index.html" class="logo-link">&#127836; Filipino Recipes</a>
         </div>
     
         <!-- Hamburger menu icon -->
-        <div class="nav-toggle">&#9776;</div>
+        <div class="nav-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0" aria-expanded="false">&#9776;</div>
         
         <!-- Navigation links -->
-        <nav class="nav-links">
+        <nav class="nav-links" aria-label="Main navigation">
             <a href="add-recipe.html" class="btn-link">Add a recipe</a>
             <a href="about-this.html" class="btn-link">About</a>
-            <a href="contact.html" class="btn-link">Contact</a>
+            <a href="contact.html" class="btn-link" aria-current="page">Contact</a>
         </nav>
     </header>
 
     <!-- Recipe Content: Image and Details Containers with 20px gap -->
-    <div class="recipe-content">
+    <main class="recipe-content" role="main">
         <!-- Column 1: Image -->
         <img src="images/about.webp" alt="Contact" class="recipe-image">
 
@@ -228,25 +228,14 @@
             </ul>
 
         </div>
-    </div>
+    </main>
 
     <!-- Footer with copyright information -->
     <footer class="footer" role="contentinfo">
         &copy; 2024 Filipino Recipes
     </footer>
 
-    <script>
-        // Select the hamburger icon and the navigation links container
-        const toggleButton = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-    
-        // Add a click event to toggle the 'show' class
-        toggleButton.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-        });
-    </script>
-
-
+    <script src="script.js"></script>
 </body>
 
 </html>

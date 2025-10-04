@@ -16,16 +16,16 @@
 <body>
 
     <!-- Header with logo linking to index.html -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="logo">
             <a href="index.html" class="logo-link">&#127836; Filipino Recipes</a>
         </div>
     
         <!-- Hamburger menu icon -->
-        <div class="nav-toggle">&#9776;</div>
+        <div class="nav-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0" aria-expanded="false">&#9776;</div>
         
         <!-- Navigation links -->
-        <nav class="nav-links">
+        <nav class="nav-links" aria-label="Main navigation">
             <a href="add-recipe.html" class="btn-link">Add a recipe</a>
             <a href="about-this.html" class="btn-link">About</a>
             <a href="contact.html" class="btn-link">Contact</a>
@@ -33,7 +33,7 @@
     </header>
 
     <!-- Recipe Content: Image and Details Containers with 20px gap -->
-    <div class="recipe-content">
+    <main class="recipe-content" role="main">
         <!-- Column 1: Image -->
         <img src="images/about.webp" alt="About" class="recipe-image">
 
@@ -47,7 +47,7 @@
             <h1>About the Recipe Catalogue</h1>
             <p>This Recipe Catalogue is a sample web development project for software engineering students. The design and functionality serve as a guide to understanding web technologies and UI/UX principles for responsive and user-friendly web applications.</p>
             
-            <h1>Tech Stack</h2>
+            <h2>Tech Stack</h2>
             <ul>
                 <li><strong>Frontend:</strong> HTML5, CSS (Flexbox & Grid)</li>
                 <li><strong>Backend:</strong> Flask (Python)</li>
@@ -55,7 +55,7 @@
                 <li><strong>Responsive Design:</strong> Media queries, CSS grid, and flexbox for layout optimisation across devices</li>
             </ul>
             
-            <h1>Design Principles</h2>
+            <h2>Design Principles</h2>
             <p>The UI/UX design follows modern web principles to ensure a seamless user experience. Key design considerations include:</p>
             <ul>
                 <li>Easy-to-navigate interfaces</li>
@@ -64,10 +64,10 @@
                 <li>Accessibility for all users</li>
             </ul>
     
-            <h1>Progressive Web Application</h2>
+            <h2>Progressive Web Application</h2>
             <p>This project will be developed as a <strong>Progressive Web Application (PWA)</strong>, enabling offline capabilities and an app-like experience. The Flask backend will handle the server-side logic, and client-side interactions will be managed using JavaScript.</p>
             
-            <h1>Project Goals</h2>
+            <h2>Project Goals</h2>
             <p>This project teaches students the integration of various web development technologies, including:</p>
             <ul>
                 <li>Building multi-page web applications using Flask</li>
@@ -79,23 +79,14 @@
 
 
         </div>
-    </div>
+    </main>
 
     <!-- Footer (same as your original design) -->
     <footer class="footer">
         &copy; 2024 Filipino Recipes
     </footer>
 
-    <script>
-        // Select the hamburger icon and the navigation links container
-        const toggleButton = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-    
-        // Add a click event to toggle the 'show' class
-        toggleButton.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 

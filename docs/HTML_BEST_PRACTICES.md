@@ -42,13 +42,92 @@ This document outlines the HTML best practices implemented in this project to ma
 </main>
 ```
 
+## Shared JavaScript for the Navigation Menu
+
+### What We Added
+- Created a single `script.js` file that every page loads
+- Wrapped the hamburger menu logic in a reusable helper
+- Added defensive checks so the script only runs when the elements exist
+- Supported keyboard users by toggling the menu on Enter or Space
+
+### Why It Matters
+- Removes duplicate code across pages
+- Makes maintenance easier—changes happen in one place
+- Reinforces good separation of concerns (HTML for structure, JS for behaviour)
+- Demonstrates how to prepare for module-based scripts in larger apps
+
+### Example
+```html
+<!-- Before: repeated inline script on each page -->
+<script>
+  const toggleButton = document.querySelector('.nav-toggle');
+  // ...more duplicated code...
+</script>
+
+<!-- After: single shared file -->
+<script src="script.js"></script>
+```
+
+```javascript
+// script.js
+const toggleButton = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (toggleButton && navLinks) {
+  const toggleMenu = () => {
+    navLinks.classList.toggle('show');
+    const isExpanded = navLinks.classList.contains('show');
+    toggleButton.setAttribute('aria-expanded', isExpanded);
+  };
+
+  toggleButton.addEventListener('click', toggleMenu);
+  toggleButton.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleMenu();
+    }
+  });
+}
+```
+
+## Responsive Layout Enhancements
+
+### What We Added
+- Introduced a `.grid-container` wrapper to keep header, content, and footer aligned vertically
+- Updated `.grid-4-col` to use `repeat(auto-fill, minmax(250px, 1fr))`
+- Documented the responsive behaviour directly in the CSS comments
+
+### Why It Matters
+- Demonstrates modern responsive techniques without media queries
+- Helps students understand how grid auto-fill works
+- Keeps layouts flexible for future recipe data from a backend
+
+### Example
+```css
+/* Page grid container - keeps header, content, and footer stacked vertically */
+.grid-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* Grid layout - arranges recipe cards responsively */
+.grid-4-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+```
+
 ## Accessibility Improvements
 
 ### What We Added
 - ARIA roles (`role="banner"`, `role="main"`, `role="contentinfo"`)
 - ARIA attributes (`aria-label`, `aria-required`, `aria-expanded`)
+- Consistent navigation state updates (`aria-expanded` toggles when the menu opens or closes)
 - Improved alt text for images
-- Keyboard navigation support
+- Keyboard navigation support (Enter or Space on the hamburger button)
 - Screen reader only text (`sr-only` class)
 
 ### Why It Matters
@@ -78,6 +157,7 @@ This document outlines the HTML best practices implemented in this project to ma
 - Helper text for form fields
 - Proper label associations
 - Appropriate input types
+- Inline comment explaining the placeholder form `action` value that students should replace when wiring a backend
 
 ### Why It Matters
 - Provides immediate feedback to users

@@ -16,14 +16,14 @@
 <body>
 
     <!-- Header Section - Contains logo and navigation -->
-    <header class="header">
+    <header class="header" role="banner">
         <!-- Logo with home link - Uses food emoji and text -->
         <div class="logo">
             <a href="index.html" class="logo-link" aria-label="Home page">&#127836; Filipino Recipes</a>
         </div>
     
         <!-- Hamburger menu icon - Only visible on mobile devices -->
-        <div class="nav-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">&#9776;</div>
+        <div class="nav-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0" aria-expanded="false">&#9776;</div>
         
         <!-- Navigation links - Primary site navigation -->
         <nav class="nav-links" aria-label="Main navigation">
@@ -34,7 +34,7 @@
     </header>
 
     <!-- Main Content Section - Uses flexbox layout with gap between elements -->
-    <main class="recipe-content">
+    <main class="recipe-content" role="main">
         <!-- Recipe Image - Left column on desktop, top section on mobile -->
         <img src="images/lumpia.jpg" alt="Lumpia spring rolls on a plate with dipping sauce" class="recipe-image">
 
@@ -97,30 +97,7 @@
     </footer>
 
 
-    <!-- JavaScript for mobile navigation menu toggle -->
-    <script>
-        // Select the hamburger icon and the navigation links container
-        const toggleButton = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-    
-        // Add a click event to toggle the 'show' class
-        toggleButton.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-            
-            // Update aria-expanded attribute for accessibility
-            const isExpanded = navLinks.classList.contains('show');
-            toggleButton.setAttribute('aria-expanded', isExpanded);
-        });
-        
-        // Allow keyboard navigation with Enter key
-        toggleButton.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter') {
-                toggleButton.click();
-            }
-        });
-    </script>
-
-
+    <script src="script.js"></script>
 </body>
 
 </html>
