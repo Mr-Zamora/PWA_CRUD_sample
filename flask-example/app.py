@@ -38,7 +38,7 @@ def register_routes(app):
     def index():
         db = get_db()
         rows = db.execute(
-            'SELECT id, name, category, short_description AS description FROM recipes ORDER BY id'
+            'SELECT id, name, category, short_description AS description, image_path FROM recipes ORDER BY id'
         ).fetchall()
         recipes = [dict(row) for row in rows]
         return render_template('index.html', recipes=recipes, active_page='home')

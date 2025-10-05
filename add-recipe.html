@@ -48,7 +48,6 @@
                            required minlength="3" maxlength="50" 
                            aria-required="true" 
                            placeholder="Enter recipe name (3-50 characters)">
-                    <span class="form-hint">Required. Enter 3-50 characters.</span>
                 </div>
 
                 <!-- Recipe Description Input - With validation for length and required field -->
@@ -58,7 +57,6 @@
                            required minlength="10" maxlength="200" 
                            aria-required="true"
                            placeholder="Brief description of the recipe (10-200 characters)">
-                    <span class="form-hint">Required. Provide a short description (10-200 characters).</span>
                 </div>                
 
                 <!-- Ingredients Input - Textarea for list of ingredients -->
@@ -67,7 +65,6 @@
                     <textarea id="ingredients" name="ingredients" rows="5" 
                               required aria-required="true"
                               placeholder="Enter ingredients, one per line"></textarea>
-                    <span class="form-hint">Required. List each ingredient on a new line.</span>
                 </div>
 
                 <!-- Directions Input - Textarea for cooking instructions -->
@@ -76,7 +73,6 @@
                     <textarea id="directions" name="directions" rows="5" 
                               required aria-required="true"
                               placeholder="Enter step-by-step cooking instructions"></textarea>
-                    <span class="form-hint">Required. Provide clear step-by-step instructions.</span>
                 </div>
 
                 <!-- Image Upload Input - For recipe photo -->
@@ -85,7 +81,7 @@
                     <input type="file" id="image-upload" name="image-upload" 
                            accept="image/jpeg, image/png, image/webp" 
                            aria-describedby="image-hint">
-                    <span id="image-hint" class="form-hint">Optional. Accepted formats: JPEG, PNG, WEBP. Max size: 5MB.</span>
+                    <span id="image-hint">Optional. Accepted formats: JPEG, PNG, WEBP. Max size: 5MB.</span>
                 </div>
                 
                 <!-- Recipe Category Selection - Dropdown for categorizing the recipe -->
@@ -100,7 +96,6 @@
                         <option value="street-food">Street Food</option>
                         <option value="dessert">Dessert</option>
                     </select>
-                    <span class="form-hint">Required. Select the most appropriate category.</span>
                 </div>
 
                 <!-- Form Actions - Buttons for submitting or canceling -->

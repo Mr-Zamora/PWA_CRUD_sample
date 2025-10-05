@@ -70,6 +70,14 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
 }
 
+.card-image {
+    width: 100%;                        /* Fill card width */
+    height: 180px;                      /* Consistent image height */
+    object-fit: cover;                  /* Crop to fill without distortion */
+    border-radius: 8px;                 /* Rounded corners to match card */
+    margin-bottom: 15px;                /* Space between image and text */
+}
+
 /* ------- RECIPE LINK STYLES ------- */
 /* Links to recipe details */
 .recipe-link {

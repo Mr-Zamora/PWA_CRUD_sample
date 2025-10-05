@@ -8,6 +8,8 @@
     <!-- Recipe cards are generated in a loop from database data -->
     {% for recipe in recipes %}
     <article class="card" data-category="{{ recipe.category }}" data-recipe-id="{{ recipe.id }}">
+        {% set image_file = recipe.image_path or 'images/about.webp' %}
+        <img src="{{ url_for('static', filename=image_file) }}" alt="{{ recipe.name }} plated" class="card-image">
         <header class="card-header">
             <p class="category">{{ recipe.category }}</p>
             <h3><a href="{{ url_for('recipe_detail', recipe_id=recipe.id) }}" class="recipe-link">{{ recipe.name }}</a></h3>

@@ -43,8 +43,9 @@
         <main class="content grid-4-col" role="main">
 
             <!-- Recipe Card Component - Will be dynamically generated in Flask version -->
-            <!-- Each card represents a single recipe with category, title and description -->
+            <!-- Each card represents a single recipe with category, title, description, and image -->
             <article class="card" data-category="Main Course" data-recipe-id="1">
+                <img src="images/about.webp" alt="Adobo served with rice" class="card-image">
                 <header class="card-header">
                     <p class="category">Main Course</p>
                     <h3><a href="#" class="recipe-link">Adobo</a></h3>
@@ -54,18 +55,8 @@
                 </div>
             </article>
             
-            <article class="card" data-category="Main Course" data-recipe-id="2">
-                <header class="card-header">
-                    <p class="category">Main Course</p>
-                    <h3><a href="#" class="recipe-link">Kare-Kare</a></h3>
-                </header>
-                <div class="card-body">
-                    <p class="recipe-short-des">A rich peanut-based stew with oxtail, beef, or pork, served with a side of shrimp paste (bagoong).</p>
-                </div>
-            </article>
-            
-            <!-- This is the only card with a working link to the recipe detail page -->
             <article class="card" data-category="Main Course" data-recipe-id="3">
+                <img src="images/lumpia.jpg" alt="Plate of lumpia spring rolls" class="card-image">
                 <header class="card-header">
                     <p class="category">Main Course</p>
                     <h3><a href="recipe-detail.html" class="recipe-link">Lumpia</a></h3>
@@ -74,103 +65,72 @@
                     <p class="recipe-short-des">A crispy, golden fried spring roll filled with seasoned ground pork and vegetables, often served with sweet and sour dipping sauce.</p>
                 </div>
             </article>
-            
-            <article class="card" data-category="Main Course" data-recipe-id="4">
+
+            <article class="card" data-category="Main Course" data-recipe-id="1">
+                <img src="images/about.webp" alt="Adobo served with rice" class="card-image">
                 <header class="card-header">
                     <p class="category">Main Course</p>
-                    <h3><a href="#" class="recipe-link">Bicol Express</a></h3>
+                    <h3><a href="#" class="recipe-link">Adobo</a></h3>
                 </header>
                 <div class="card-body">
-                    <p class="recipe-short-des">A spicy dish made with pork, chillies, and shrimp paste cooked in rich coconut milk.</p>
-                </div>
-            </article>
-
-            <article class="card" data-category="Soup" data-recipe-id="5">
-                <header class="card-header">
-                    <p class="category">Soup</p>
-                    <h3><a href="#" class="recipe-link">Bulalo</a></h3>
-                </header>
-                <div class="card-body">
-                    <p class="recipe-short-des">A comforting beef shank soup with bone marrow, corn, cabbage, and potatoes.</p>
-                </div>
-            </article>
-
-            <article class="card" data-category="Noodles" data-recipe-id="6">
-                <header class="card-header">
-                    <p class="category">Noodles</p>
-                    <h3><a href="#" class="recipe-link">Pancit Canton</a></h3>
-                </header>
-                <div class="card-body">
-                    <p class="recipe-short-des">Stir-fried egg noodles with vegetables, shrimp, pork, and a savoury soy sauce-based seasoning.</p>
-                </div>
-            </article>
-
-            <article class="card" data-category="Special Occasion" data-recipe-id="7">
-                <header class="card-header">
-                    <p class="category">Special Occasion</p>
-                    <h3><a href="#" class="recipe-link">Lechon</a></h3>
-                </header>
-                <div class="card-body">
-                    <p class="recipe-short-des">A whole roasted pig with crispy skin, often served at fiestas and large gatherings.</p>
+                    <p class="recipe-short-des">A savoury dish of marinated pork or chicken simmered in soy sauce, vinegar, and garlic.</p>
                 </div>
             </article>
             
-            <article class="card" data-category="Special Occasion" data-recipe-id="8">
+            <article class="card" data-category="Main Course" data-recipe-id="3">
+                <img src="images/lumpia.jpg" alt="Plate of lumpia spring rolls" class="card-image">
                 <header class="card-header">
-                    <p class="category">Special Occasion</p>
-                    <h3><a href="#" class="recipe-link">Kaldereta</a></h3>
+                    <p class="category">Main Course</p>
+                    <h3><a href="recipe-detail.html" class="recipe-link">Lumpia</a></h3>
                 </header>
                 <div class="card-body">
-                    <p class="recipe-short-des">A hearty beef stew made with tomatoes, liver spread, bell peppers, and potatoes.</p>
+                    <p class="recipe-short-des">A crispy, golden fried spring roll filled with seasoned ground pork and vegetables, often served with sweet and sour dipping sauce.</p>
                 </div>
             </article>
 
-            <article class="card" data-category="Street Food" data-recipe-id="9">
+            <article class="card" data-category="Main Course" data-recipe-id="1">
+                <img src="images/about.webp" alt="Adobo served with rice" class="card-image">
                 <header class="card-header">
-                    <p class="category">Street Food</p>
-                    <h3><a href="#" class="recipe-link">Balut</a></h3>
+                    <p class="category">Main Course</p>
+                    <h3><a href="#" class="recipe-link">Adobo</a></h3>
                 </header>
                 <div class="card-body">
-                    <p class="recipe-short-des">A fertilised duck egg with a developing embryo, commonly sold as street food and considered a delicacy.</p>
-                </div>
-            </article>
-
-            <article class="card" data-category="Dessert" data-recipe-id="10">
-                <header class="card-header">
-                    <p class="category">Dessert</p>
-                    <h3><a href="#" class="recipe-link">Halo-Halo</a></h3>
-                </header>
-                <div class="card-body">
-                    <p class="recipe-short-des">A refreshing dessert made with shaved ice, sweetened fruits, jellies, beans, and topped with ube and leche flan.</p>
+                    <p class="recipe-short-des">A savoury dish of marinated pork or chicken simmered in soy sauce, vinegar, and garlic.</p>
                 </div>
             </article>
             
-            <article class="card" data-category="Dessert" data-recipe-id="11">
+            <article class="card" data-category="Main Course" data-recipe-id="3">
+                <img src="images/lumpia.jpg" alt="Plate of lumpia spring rolls" class="card-image">
                 <header class="card-header">
-                    <p class="category">Dessert</p>
-                    <h3><a href="#" class="recipe-link">Bibingka</a></h3>
+                    <p class="category">Main Course</p>
+                    <h3><a href="recipe-detail.html" class="recipe-link">Lumpia</a></h3>
                 </header>
                 <div class="card-body">
-                    <p class="recipe-short-des">A type of rice cake traditionally cooked in clay pots, topped with salted egg and cheese, often served during Christmas.</p>
+                    <p class="recipe-short-des">A crispy, golden fried spring roll filled with seasoned ground pork and vegetables, often served with sweet and sour dipping sauce.</p>
+                </div>
+            </article>
+
+            <article class="card" data-category="Main Course" data-recipe-id="1">
+                <img src="images/about.webp" alt="Adobo served with rice" class="card-image">
+                <header class="card-header">
+                    <p class="category">Main Course</p>
+                    <h3><a href="#" class="recipe-link">Adobo</a></h3>
+                </header>
+                <div class="card-body">
+                    <p class="recipe-short-des">A savoury dish of marinated pork or chicken simmered in soy sauce, vinegar, and garlic.</p>
                 </div>
             </article>
             
-            <article class="card" data-category="Dessert" data-recipe-id="12">
+            <article class="card" data-category="Main Course" data-recipe-id="3">
+                <img src="images/lumpia.jpg" alt="Plate of lumpia spring rolls" class="card-image">
                 <header class="card-header">
-                    <p class="category">Dessert</p>
-                    <h3><a href="#" class="recipe-link">Leche Flan</a></h3>
+                    <p class="category">Main Course</p>
+                    <h3><a href="recipe-detail.html" class="recipe-link">Lumpia</a></h3>
                 </header>
                 <div class="card-body">
-                    <p class="recipe-short-des">A creamy custard dessert made with egg yolks and milk, topped with caramelised sugar.</p>
+                    <p class="recipe-short-des">A crispy, golden fried spring roll filled with seasoned ground pork and vegetables, often served with sweet and sour dipping sauce.</p>
                 </div>
             </article>
-            
-
-            
-            
-            
-
-
         </main>
         
         <!-- Footer - Contains copyright information -->
